@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.1.js"></script>
+    <title>DOM manipulation</title>
+    <style>
+        .design {
+            color: blueviolet;
+            background-color: yellow;
+            padding: 20px;
+            font-size: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, modi! Numquam atque quaerat necessitatibus
+        debitis unde dignissimos nulla voluptas, dolore omnis? Adipisci aperiam pariatur debitis dolorum numquam, nemo
+        laborum quia.</div>
+
+    <br>
+
+    <button id="buttonApp">Append DIV</button>
+    <button id="buttonPre">Prepend DIV</button>
+
+    <br><br>
+
+    <button id="buttonAft">After DIV</button>
+    <button id="buttonBef">Before DIV</button>
+
+    <br><br><br><br>
+
+    <input type="text" value="demo text">
+    <br><br>
+    <button id="alertVal">Alert value</button>
+    <button id="changeVal">Change value</button>
+
+    <br><br><br><br>
+
+    <p data-type="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem necessitatibus omnis eaque
+        quibusdam dignissimos, excepturi ratione nostrum atque quaerat maxime nulla nemo vero dicta ab sit libero eum
+        possimus ipsam.</p>
+
+    <br><br>
+
+    <button id="getAttr">Get Attribute data-type</button>
+    <button id="setAttr">Set Attribute data-type to CHANGED</button>
+
+    <br><br>
+
+    <button id="addClass">Add Class to paragraph</button>
+    <button id="removeClass">Remove Class from paragraph</button>
+
+    <br><br>
+
+    <button id="emptyPar">Empty paragraph</button>
+    <button id="removePar">Remove paragraph from DOM</button>
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#buttonApp").click(function () {
+                $("div").append("<b>Appendation </b>");
+            });
+            $("#buttonPre").click(function () {
+                $("div").prepend("<b>Prependation </b>");
+            });
+            $("#buttonAft").click(function () {
+                $("div").after("<b>After </b><br>");
+            });
+            $("#buttonBef").click(function () {
+                $("div").before("<b>Before </b><br>");
+            });
+            $("#alertVal").click(function () {
+                alert($("input").val());
+            });
+            $("#changeVal").click(function () {
+                $("input").val("CHANGED BY CLICK!");
+            });
+            $("#getAttr").click(function () {
+                alert($("p").attr("data-type"));
+            });
+            $("#getAttr").click(function () {
+                $("p").attr("data-type", "CHANGED");
+            });
+            $("#addClass").click(function () {
+                $("p").addClass("design");
+            });
+            $("#removeClass").click(function () {
+                $("p").removeClass("design");
+            });
+            $("#emptyPar").click(function () {
+                $("p").empty();
+            });
+            $("#removePar").click(function () {
+                $("p").remove();
+            });
+        });
+    </script>
+</body>
+
+</html>
